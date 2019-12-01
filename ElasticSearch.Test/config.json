@@ -1,0 +1,8 @@
+{
+  "Configurations": [
+    {
+      "Key": "APP.CONNECTION_STRING",
+      "Value": "Server=localhost;User Id=root;Password=root;Database=DataBaseName"
+    }
+  ]
+}

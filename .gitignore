@@ -1,0 +1,14 @@
+/ElasticSearch.WebApi/bin
+/ElasticSearch.WebApi/obj
+/ElasticSearch.Domain/obj
+/ElasticSearch.Domain/bin
+/.vs
+/ElasticSearch.ApplicationService/obj
+/ElasticSearch.ApplicationService/bin
+/ElasticSearch.Repository/obj
+/ElasticSearch.Repository/bin
+/ElasticSearch.Test/bin
+/ElasticSearch.Test/obj
+/packages
+/ElasticSearch.Web/bin
+/ElasticSearch.Web/obj

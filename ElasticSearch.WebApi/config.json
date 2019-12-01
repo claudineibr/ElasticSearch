@@ -1,0 +1,46 @@
+﻿{
+  "Configurations": [
+    {
+      "Key": "APP.CONNECTION_STRING",
+      "Value": "Server=localhost;User Id=root;Password=root;Database=DataBaseName"
+    },
+    {
+      "Key": "CUSTOMER.TOKENCRYPTOGRAPHY",
+      "Value": ""
+    },
+    {
+      "Key": "APP.APIKEY",
+      "Value": ""
+    },
+    {
+      "Key": "APP.ENDPOINT_IMAGES",
+      "Value": "htts://"
+    }
+  ],
+  "CacheProfile": [
+    {
+      "Key": "RESPONSECACHE.TIME",
+      "Value": 70 //Minutes
+    },
+    {
+      "Key": "RESPONSECACHE.TIMEOUT",
+      "Value": 200
+    },
+    {
+      "Key": "CACHE.INSTANCE_NAME",
+      "Value": "Default-"
+    },
+    {
+      "Key": "DEFAULT.STORE",
+      "Value": "0"
+    },
+    {
+      "Key": "CACHE.REDIS.SERVER",
+      "Value": "localhost"
+    },
+    {
+      "Key": "CACHE.REDIS.DATABASE",
+      "Value": "14"
+    }
+  ]
+}
