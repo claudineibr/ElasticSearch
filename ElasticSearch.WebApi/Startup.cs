@@ -30,6 +30,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO.Compression;
 using System.Text;
+using Nest;
+using ElasticSearch.WebApi.Utilities;
 
 namespace ElasticSearch.WebApi
 {
@@ -50,6 +52,8 @@ namespace ElasticSearch.WebApi
             services.AddMvc()
                    .AddJsonOptions(o => o.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver())
                    .AddJsonOptions(o => o.SerializerSettings.Formatting = Formatting.None);
+
+            services.AddElasticsearch(Configuration);
 
             // Add framework services.
             services.AddCors(options => options.AddPolicy("AllowAll", p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
@@ -88,7 +92,7 @@ namespace ElasticSearch.WebApi
                 loggingBuilder.AddConfiguration(Configuration.GetSection("Logging"));
                 loggingBuilder.AddConsole();
                 loggingBuilder.AddFilter<ConsoleLoggerProvider>
-                    ((category, level) => category == "A" || level == LogLevel.Critical);
+                    ((category, level) => category == "A" || level == Microsoft.Extensions.Logging.LogLevel.Critical);
             });
 
             services.AddDbContext<ElasticSearchContext>(option => option.UseMySql(Config.ConnectionString, mySqlOptions =>
@@ -198,5 +202,7 @@ namespace ElasticSearch.WebApi
 
             app.UseStaticFiles();
         }
+
+      
     }
 }
