@@ -17,8 +17,7 @@ namespace ElasticSearch.WebApi.Utilities
                 .DefaultIndex(defaultIndex)
                 .DefaultMappingFor<ProductViewModel>(m => m
                     .Ignore(p => p.CategoryName)
-                    .PropertyName(p => p.ProductCode, "id")
-                );
+                ).EnableDebugMode();
 
             var client = new ElasticClient(settings);
 

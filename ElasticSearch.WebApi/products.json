@@ -1,0 +1,157 @@
+[
+  {
+    "productCode": "30ef5c04-4316-426a-8eb5-133adf416ef5",
+    "categoryCode": "981427de-f4d7-4e13-82d2-e18853df4838",
+    "categoryName": "Bebidas",
+    "name": "Coca-Cola",
+    "description": "Coca-Cola lata 350ml",
+    "price": 3.0000,
+    "hasArImage": false,
+    "createAt": "2019-05-25T02:01:03",
+    "updateAt": "2019-05-25T02:01:03",
+    "images": [
+      {
+        "imageCode": "20390264-3c2e-49df-a881-8517089a4bf1",
+        "name": "Coca-Cola",
+        "initial": false,
+        "url": "https://s3-sa-east-1.amazonaws.com/on-the-table/products/30ef5c04-4316-426a-8eb5-133adf416ef5.jpg",
+        "isAR": false,
+        "hasAR": false,
+        "isSource": false,
+        "isResource": false
+      }
+    ]
+  },
+  {
+    "productCode": "bc7351f8-c671-484e-b043-0a09338b1cd9",
+    "categoryCode": "981427de-f4d7-4e13-82d2-e18853df4838",
+    "categoryName": "Bebidas",
+    "name": "Sprite",
+    "description": "Sprite lata 350ml",
+    "price": 3.5000,
+    "hasArImage": false,
+    "createAt": "2019-05-25T02:01:03",
+    "updateAt": "2019-05-25T02:01:03",
+    "images": [
+      {
+        "imageCode": "1e9cb77b-7908-4811-b7c7-76c0880a1782",
+        "name": "Sprite",
+        "initial": false,
+        "url": "https://s3-sa-east-1.amazonaws.com/on-the-table/products/bc7351f8-c671-484e-b043-0a09338b1cd9.jpg",
+        "isAR": false,
+        "hasAR": false,
+        "isSource": false,
+        "isResource": false
+      }
+    ]
+  },
+  {
+    "productCode": "bc7351f8-c671-564e-b043-0a0933851845",
+    "categoryCode": "e70cf66d-47a1-4ce6-a5a9-fa5c5aa0ae76",
+    "categoryName": "Lanches",
+    "name": "Hamburger de Filé Mignon",
+    "description": "200g de filé mignon",
+    "price": 28.9000,
+    "hasArImage": false,
+    "createAt": "2019-05-25T02:01:03",
+    "updateAt": "2019-05-25T02:01:03",
+    "images": [
+      {
+        "imageCode": "bc7351f8-c671-564e-b043-0a099813asdEW",
+        "name": "Hamburger",
+        "initial": false,
+        "url": "https://s3-sa-east-1.amazonaws.com/on-the-table/products/bc7351f8-c671-564e-b043-0a0933851845.png",
+        "isAR": false,
+        "hasAR": false,
+        "isSource": false,
+        "isResource": false
+      }
+    ]
+  },
+  {
+    "productCode": "bc7351f8-c671-564e-b043-0a0odH564ds",
+    "categoryCode": "e70cf66d-47a1-4ce6-a5a9-fa5c5aa0ae76",
+    "categoryName": "Lanches",
+    "name": "Fatia pizza de pepperoni",
+    "description": "Fatia pizza de pepperoni",
+    "price": 15.0000,
+    "hasArImage": true,
+    "createAt": "2019-05-25T02:01:03",
+    "updateAt": "2019-05-25T02:01:03",
+    "images": [
+      {
+        "imageCode": "bc7351f8-c671-564e-b043-64daeqasd5665a",
+        "name": "Pizza",
+        "initial": false,
+        "url": "https://s3-sa-east-1.amazonaws.com/on-the-table/products/bc7351f8-c671-564e-b043-0a0odH564ds.jpg",
+        "isAR": false,
+        "hasAR": true,
+        "isSource": false,
+        "isResource": false
+      },
+      {
+        "imageCode": "bc7351f8-c671-564e-b043-024948jodsf2",
+        "name": "Pizza",
+        "initial": false,
+        "url": "https://s3-sa-east-1.amazonaws.com/on-the-table/products/reality/bc7351f8-c671-564e-b043-0a0odH564ds/plate_diffuse.jpg",
+        "isAR": true,
+        "hasAR": false,
+        "isSource": false,
+        "isResource": true
+      },
+      {
+        "imageCode": "bc7351f8-c671-564e-b043-64daeqwdaas",
+        "name": "Pizza",
+        "initial": false,
+        "url": "https://s3-sa-east-1.amazonaws.com/on-the-table/products/reality/bc7351f8-c671-564e-b043-0a0odH564ds/13917_Pepperoni_v2_l2.mtl",
+        "isAR": true,
+        "hasAR": false,
+        "isSource": false,
+        "isResource": true
+      },
+      {
+        "imageCode": "bc7351f8-c671-564e-b043-64daeqw56411",
+        "name": "Pizza",
+        "initial": false,
+        "url": "https://s3-sa-east-1.amazonaws.com/on-the-table/products/reality/bc7351f8-c671-564e-b043-0a0odH564ds/13917_Pepperoni_v2_l2obj.obj",
+        "isAR": true,
+        "hasAR": false,
+        "isSource": true,
+        "isResource": false
+      },
+      {
+        "imageCode": "bc7351f8-c671-564e-saa43-64daeqw343",
+        "name": "Pizza",
+        "initial": false,
+        "url": "https://s3-sa-east-1.amazonaws.com/on-the-table/products/reality/bc7351f8-c671-564e-b043-0a0odH564ds/13917_Pepperoni_diffuse.jpg",
+        "isAR": true,
+        "hasAR": false,
+        "isSource": false,
+        "isResource": true
+      }
+    ]
+  },
+  {
+    "productCode": "bc7351f8-c671-564e-b043-0a0odHt78496",
+    "categoryCode": "e70cf66d-47a1-4ce6-a5a9-fa5csdvbye84",
+    "categoryName": "Refeições",
+    "name": "Bife de chorizo argentino",
+    "description": "bife de chorizo argentino",
+    "price": 68.9900,
+    "hasArImage": false,
+    "createAt": "2019-05-25T02:01:03",
+    "updateAt": "2019-05-25T02:01:03",
+    "images": [
+      {
+        "imageCode": "bc7351f8-c671-564e-b043-64daeqw65498",
+        "name": "Chorizo",
+        "initial": false,
+        "url": "https://s3-sa-east-1.amazonaws.com/on-the-table/products/bc7351f8-c671-564e-b043-0a0odHt78496.png",
+        "isAR": false,
+        "hasAR": false,
+        "isSource": false,
+        "isResource": false
+      }
+    ]
+  }
+]

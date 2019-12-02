@@ -9,6 +9,7 @@
     <PackageReference Include="AWSSDK.S3" Version="3.3.102.5" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.5.0" />
     <PackageReference Include="NascorpLib" Version="1.1.4" />
+    <PackageReference Include="NEST" Version="7.4.1" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.5.0" />
   </ItemGroup>

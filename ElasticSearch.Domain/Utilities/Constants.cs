@@ -4,6 +4,4 @@
     {
         public const string DATANOTFOUND = "The object informed is null check that the information is filled out correctly and try again";
         public const string BRASIL = "Brasil";
-        public const string KEYCRYPTOGRAPHY = "AE18A1AD5FC1EC53E84F30AA746139EEBAFF8A9B76638895";
-    }
 }

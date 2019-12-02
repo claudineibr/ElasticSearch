@@ -32,6 +32,7 @@ using System.IO.Compression;
 using System.Text;
 using Nest;
 using ElasticSearch.WebApi.Utilities;
+using ElasticSearch.ApplicationService.SearchService;
 
 namespace ElasticSearch.WebApi
 {
@@ -113,15 +114,13 @@ namespace ElasticSearch.WebApi
             });
 
             services.AddScoped<DbContext>(sp => sp.GetService<ElasticSearchContext>());
-            services.AddSingleton<CacheExchange>(provider => new CacheExchange(Config.CacheRedisConnection, Config.CacheRedisDatabase, Config.CacheInstanceName, Config.CacheExpireTime, Config.CacheRedisTimeout));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddTransient<IJwtTokenApplication, JwtTokenApplication>();
             services.AddTransient<ILoginApplication, LoginApplication>();
 
-
-            services.AddTransient<IMeuServicoApplicationService, MeuServicoApplicationService>();
-            services.AddTransient<IMeuServicoRepository, MeuServicoRepository>();
+            services.AddTransient<ISearchApplicationService, SearchApplicationService>();
+            services.AddTransient<IProductRepository, ProductRepository>();
 
             //Setting up Jwt Authentication
             services.AddAuthentication(options =>
@@ -203,6 +202,6 @@ namespace ElasticSearch.WebApi
             app.UseStaticFiles();
         }
 
-      
+
     }
 }
