@@ -65,5 +65,24 @@ namespace ElasticSearch.ApplicationService.SearchService
             var products = productRepository.GetAll().ToArray();
             await elasticClient.BulkAsync(b => b.Index("products").IndexMany(products));
         }
+
+        public async Task ReIndexUpdate()
+        {
+            var products = productRepository.GetAll().ToArray();
+
+            foreach (var product in products)
+            {
+                var any = await elasticClient.SearchAsync<ProductViewModel>(
+                  s => s.Query(q => q.Term(t => t.ProductCode, product.ProductCode)));
+
+                if (any.Documents.Count() == 0)
+                {
+                    await elasticClient.IndexDocumentAsync(product);
+                    continue;
+                }
+
+                //await elasticClient.UpdateAsync(product);
+            }
+        }
     }
 }

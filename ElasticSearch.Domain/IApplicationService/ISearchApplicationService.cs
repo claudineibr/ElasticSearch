@@ -10,5 +10,6 @@ namespace ElasticSearch.Domain.IApplicationService
         Task ReIndex();
         Task ReIndexMany();
         Task ReIndexBulkAsync();
+        Task ReIndexUpdate();
     }
 }
