@@ -1,4 +1,11 @@
 ﻿using Amazon.S3;
+using ElasticSearch.ApplicationService.SearchService;
+using ElasticSearch.Domain.IApplicationService;
+using ElasticSearch.Domain.IRepository;
+using ElasticSearch.Domain.Utilities;
+using ElasticSearch.Repository;
+using ElasticSearch.Repository.Repositories;
+using ElasticSearch.WebApi.Utilities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,27 +19,15 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Console;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Net.Http.Headers;
-using NascorpLib.Cache.Redis;
 using NascorpLib.WebSocketManager;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using ElasticSearch.ApplicationService;
-using ElasticSearch.ApplicationService.AuthenticationService;
-using ElasticSearch.ApplicationService.LoginService;
-using ElasticSearch.Domain.IApplicationService;
-using ElasticSearch.Domain.IRepository;
-using ElasticSearch.Domain.Utilities;
-using ElasticSearch.Repository;
-using ElasticSearch.Repository.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO.Compression;
 using System.Text;
-using Nest;
-using ElasticSearch.WebApi.Utilities;
-using ElasticSearch.ApplicationService.SearchService;
 
 namespace ElasticSearch.WebApi
 {
@@ -116,40 +111,9 @@ namespace ElasticSearch.WebApi
             services.AddScoped<DbContext>(sp => sp.GetService<ElasticSearchContext>());
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-            services.AddTransient<IJwtTokenApplication, JwtTokenApplication>();
-            services.AddTransient<ILoginApplication, LoginApplication>();
-
             services.AddTransient<ISearchApplicationService, SearchApplicationService>();
             services.AddTransient<IProductRepository, ProductRepository>();
 
-            //Setting up Jwt Authentication
-            services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-                .AddJwtBearer(options =>
-                {
-                    options.RequireHttpsMetadata = false;
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuer = false,
-                        ValidateAudience = false,
-                        ValidateLifetime = true,
-                        ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"])),
-                        ClockSkew = TimeSpan.Zero
-                    };
-                });
-
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("Bearer", policy =>
-                {
-                    policy.AuthenticationSchemes.Add(JwtBearerDefaults.AuthenticationScheme);
-                    policy.RequireAuthenticatedUser();
-                });
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

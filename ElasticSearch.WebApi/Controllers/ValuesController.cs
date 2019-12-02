@@ -37,6 +37,44 @@ namespace ElasticSearch.WebApi.Controllers
             }
         }
 
+
+        [HttpGet, Route("api/v1/Search/ReIndexMany")]
+        [ApiExplorerSettings(GroupName = "v1")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> ReIndexMany()
+        {
+            try
+            {
+                await search.ReIndexMany();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                logger.Error($"Product/Search::{ex.Message}::{ex.InnerException}::{ex.StackTrace}::{ex.Data}");
+                return StatusCode((int)HttpStatusCode.ExpectationFailed, ExceptionErrors.Extract(ex));
+            }
+        }
+
+        [HttpGet, Route("api/v1/Search/ReIndexBulkAsync")]
+        [ApiExplorerSettings(GroupName = "v1")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> ReIndexBulkAsync()
+        {
+            try
+            {
+                await search.ReIndexBulkAsync();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                logger.Error($"Product/Search::{ex.Message}::{ex.InnerException}::{ex.StackTrace}::{ex.Data}");
+                return StatusCode((int)HttpStatusCode.ExpectationFailed, ExceptionErrors.Extract(ex));
+            }
+        }
+
+
         [HttpGet, Route("api/v1/search/")]
         [ApiExplorerSettings(GroupName = "v1")]
         [ProducesResponseType(typeof(List<ProductViewModel>), (int)HttpStatusCode.OK)]
@@ -53,5 +91,7 @@ namespace ElasticSearch.WebApi.Controllers
                 return StatusCode((int)HttpStatusCode.ExpectationFailed, ExceptionErrors.Extract(ex));
             }
         }
+
+
     }
 }

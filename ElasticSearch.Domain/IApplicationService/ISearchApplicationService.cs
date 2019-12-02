@@ -8,5 +8,7 @@ namespace ElasticSearch.Domain.IApplicationService
     {
         Task<List<ProductViewModel>> Find(FilterProductViewModel filter);
         Task ReIndex();
+        Task ReIndexMany();
+        Task ReIndexBulkAsync();
     }
 }
