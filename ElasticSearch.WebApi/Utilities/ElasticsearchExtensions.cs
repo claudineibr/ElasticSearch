@@ -1,9 +1,7 @@
 ﻿using Elasticsearch.Net;
-using ElasticSearch.Domain.ViewModel;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Nest;
-using System;
 
 namespace ElasticSearch.WebApi.Utilities
 {
@@ -22,9 +20,7 @@ namespace ElasticSearch.WebApi.Utilities
 
             var settings = new ConnectionSettings(pool)
                 .DefaultIndex(defaultIndex)
-                .DefaultMappingFor<ProductViewModel>(m => m
-                    .Ignore(p => p.CategoryName)
-                ).EnableDebugMode();
+                .EnableDebugMode();
 
 
             var client = new ElasticClient(settings);
